@@ -6,7 +6,6 @@ void main() {
   runApp(const MojaAplikacia());
 }
 
-// Hlavná aplikácia
 class MojaAplikacia extends StatelessWidget {
   const MojaAplikacia({super.key});
 
@@ -19,7 +18,6 @@ class MojaAplikacia extends StatelessWidget {
   }
 }
 
-// Obrazovka s kockou
 class Kocka extends StatefulWidget {
   const Kocka({super.key});
 
@@ -29,10 +27,8 @@ class Kocka extends StatefulWidget {
 
 class _KockaState extends State<Kocka> {
 
-  // Náhodné číslo od 1 do 6
   int cisloKocky = 1;
 
-  // Funkcia na hodenie kockou
   void hodKockou() {
     setState(() {
       cisloKocky = Random().nextInt(6) + 1;
@@ -52,7 +48,7 @@ class _KockaState extends State<Kocka> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
 
-            // Obrázok kocky
+        
             Image.asset(
               'assets/images/dice-$cisloKocky.png',
               width: 200,
@@ -60,7 +56,6 @@ class _KockaState extends State<Kocka> {
 
             const SizedBox(height: 30),
 
-            // Číslo, ktoré sme hodili
             Text(
               'Hodil si $cisloKocky',
               style: const TextStyle(
@@ -70,8 +65,7 @@ class _KockaState extends State<Kocka> {
             ),
 
             const SizedBox(height: 20),
-
-            // Tlačidlo
+            
             ElevatedButton(
               onPressed: hodKockou,
               child: const Text('Hodiť kockou'),
